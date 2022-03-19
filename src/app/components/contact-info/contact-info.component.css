@@ -1,0 +1,46 @@
+p{
+    line-height: 1.5;
+    display: inline;    
+}
+
+h2{
+    font-weight: 100;
+    font-size: 2rem;
+}
+
+.contact-info{
+    margin-top: 1em;
+    display: flex;
+    gap: 2rem;
+    color: rgb(54, 52, 52);
+    font-size: 0.9rem;
+}
+
+.info{
+    display: grid;
+    gap: 1rem;
+    width: 400px;
+}
+
+.options{
+    display: flex;
+    gap: 1rem;
+}
+
+.options > div{
+    display: flex;
+    align-items: flex-start;
+}
+
+#edit:hover{
+    cursor: pointer;
+}
+
+#delete:hover{
+    cursor: pointer;
+}
+
+.address-field{
+    display: flex;
+    align-items: center;
+}

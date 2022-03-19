@@ -1,0 +1,15 @@
+<main class="container">
+<div>
+    <h3>CONTACTS</h3>
+    <div class="scrollable">
+        <ul *ngFor="let contact of contacts; let i=index">
+            <li (click)="onSelect(contact, i)">
+                <h2>{{contact.name}}</h2>
+                <p>{{contact.email}}</p>
+                <p>{{contact.mobile}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<app-contact-info  *ngIf="selected" [parentData]="curr_contact" (deleteContact)="delete($event)"></app-contact-info>
+</main>

@@ -1,0 +1,42 @@
+<form class="form-fields" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <diV *ngIf="myForm.form.invalid" class="alert">{{error}}</diV>
+    <div class="form-field">
+        <label>name<span class="alert">*</span></label>
+        <input type="text" name="name" [(ngModel)]="name" required #rname="ngModel" [class.is-invalid]="rname.touched && rname.invalid">
+        <small [class.error-message]="rname.untouched || rname.valid">name is required</small>
+    </div>
+    <div class="form-field">
+        <label>email<span class="alert">*</span></label>
+        <input type="email" name="email" [(ngModel)]="email" required #remail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [class.is-invalid]="remail.touched && remail.invalid">
+        <div *ngIf="remail.errors && (remail.touched || remail.invalid)">
+            <small *ngIf="remail.errors['required'] && remail.touched">email is required</small>
+            <small *ngIf="remail.errors['pattern']">enter valid email</small>
+        </div>
+    </div>
+    <div class="form-field tel-fields">
+        <div class="tel-field">
+            <label>mobile<span class="alert">*</span></label>
+            <input type="tel" name="mobile" [(ngModel)]="mobile" pattern="^\d{10}$" #rphone="ngModel" [class.is-invalid]="rphone.touched && rphone.invalid" required>
+            <div *ngIf="rphone.errors && (rphone.touched || rphone.invalid)">
+                <small *ngIf="rphone.errors['required'] && rphone.touched">phone is required</small>
+                <small *ngIf="rphone.errors['pattern']">phone is requires 10 digits</small>
+            </div>
+        </div>
+        <div class="tel-field">
+            <label>landline</label>
+            <input type="tel" name="landline" [(ngModel)]="landline">
+        </div>
+    </div>
+    <div class="form-field">
+        <label>website</label>
+        <input type="url" name="website" [(ngModel)]="website">
+    </div>
+    <div class="form-field">
+        <label>address</label>
+        <textarea rows="3" id="address" name="address" [(ngModel)]="address"></textarea>
+    </div>
+    <div class="buttons form-field">
+        <button type="reset" id="reset">RESET</button>
+        <button type="submit" id="add">{{value}}</button>
+    </div>
+</form>

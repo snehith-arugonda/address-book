@@ -1,0 +1,52 @@
+h2{
+    font-weight: 200;
+    margin-bottom: 0.25em;
+}
+
+h3{
+    margin-bottom: 0.5em;
+}
+
+p{
+    margin-bottom: 0.25em;
+}
+
+main{
+    display: flex;
+    gap: 2rem;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.scrollable{
+    border: 1px solid rgb(56, 53, 53);
+    min-height: 10vh;
+    max-height: 70vh;
+    width: 25em;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+li{
+    padding: 0.5em;
+    color: rgb(70, 67, 67);
+}
+
+ul:not(:first-child){
+    border-top: 0.01em solid black;
+}
+
+.selected-contact{
+    background-color: #c6ecf3;
+}
+
+li :nth-child(2){
+    font-size: smaller;
+}
+
+.active{
+    background-color: rgb(166, 206, 206);
+}
